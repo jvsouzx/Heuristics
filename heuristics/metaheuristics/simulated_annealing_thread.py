@@ -87,14 +87,22 @@ def simulated_annealing_main(
                     best_obj
                 )) for n in range(1, n_threads +1)
         ]
-
-        # compara os resultados obtidos nas threads
-        
+    
         for thread in thread_list:
             thread.start()
-            if thread.join()[1] < best_obj:
-                best_solution = thread.join()[0]
-                best_obj = thread.join()[1]
+        
+        best_thread_obj = math.inf
+        best_thread_solution = []
+
+        results = [thread.join() for thread in thread_list]
+        
+        for i in range(len(results)):
+            if results[i][1] <= best_thread_obj:
+                best_thread_obj = results[i][1]
+                best_thread_solution = results[i][0]
+        
+        best_solution = best_thread_solution
+        best_obj = best_thread_obj
     
         temperature = cooling_rate * temperature
         if temperature < eps:

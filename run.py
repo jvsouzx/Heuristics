@@ -29,7 +29,7 @@ def solver(problem, rng, cb):
     solution, obj = tsp.furthest_insertion_heuristic(problem, 15)
     #solution, obj = mh.ils(problem, local_search, perturbation, solution, obj, rng=rng, cb=cb)
     #solution, obj = mh.multistart(problem, local_search, create_rand_solution, rng=rng, cb=cb)
-    solution, obj  = mh.simulated_annealing_main(problem, solution, obj, ns[0], 10000, 0.95, 100, 3, 1000, rng, cb=cb)
+    solution, obj  = mh.simulated_annealing_main(problem, solution, obj, ns[0], 10000, 0.95, 100, 2, 1000, rng, cb=cb)
 
     
 # -------------------------------------------------------------------
