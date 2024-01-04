@@ -13,7 +13,7 @@ To deactivate venv:
 ```
 deactivate
 ```
-Install the dependencies for run the project
+Install the dependencies to run the project
 ```
 pip install -r requirements.txt
 ```
