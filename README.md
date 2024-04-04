@@ -1,5 +1,5 @@
 # heuristics
-A Python module that implements some common heuristics for combinatorial optimization problems.
+A Python module that implements some common heuristics for combinatorial optimization problems, in specific the traveling salesman problem (TSP).
 
 To run this project, venv is necessarie.
 
